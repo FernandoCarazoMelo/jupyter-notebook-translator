@@ -1,0 +1,8 @@
+torch
+ipykernel
+pandas
+transformers
+langchain
+googletrans==3.1.0a0
+nbconvert
+-e .

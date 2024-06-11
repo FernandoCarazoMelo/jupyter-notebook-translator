@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "translate-notebook"
+version = "0.1.0"
+description = "Module to translate a jupyter notebook to another language."
+authors = ["Fernando Carazo <fernando.carazom@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+ipykernel = "^6.29.4"
+pandas = "^2.2.2"
+googletrans = "3.1.0a0"
+typer = "^0.12.3"
+nbconvert = "^7.16.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
