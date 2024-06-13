@@ -7,8 +7,8 @@ See available languages at the end of this README.
 
 ## Features
 
-- Translate entire Jupyter Notebooks with a single command.
-- Translate only the comments in your code cells.
+- Translate Jupyter Notebooks with a single command.
+- Translate both Markdown cells and the code comments in your code cells.
 - Supports batch processing of multiple notebooks in a directory.
 - Utilizes [googletrans](https://github.com/ssut/py-googletrans) for translation.
 
