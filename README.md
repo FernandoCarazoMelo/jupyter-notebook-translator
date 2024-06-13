@@ -2,16 +2,15 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/fernandocarazomelo/jupyter-notebook-translator.svg?style=social&label=Star)](https://github.com/fernandocarazomelo/jupyter-notebook-translator)
 
-Easily translate your Jupyter Notebooks from English or any other language to any language with this powerful tool. Designed for data scientists, researchers, and educators who want to make their work accessible to a native-speaking audience.
+Easily translate your Jupyter Notebooks from English or any other language to any language with this powerful tool. 
 
 For details refer to the [py-googletrans API Documentation](https://py-googletrans.readthedocs.io/en/latest/). See available languages at the end of this README.
 
 ## Features
 
-- Translate entire Jupyter Notebooks with a single command.
-- Translate only the comments in your code cells.
+- Translate Jupyter Notebooks with a single command.
+- Translate both Markdown cells and the code comments in your code cells.
 - Supports batch processing of multiple notebooks in a directory.
-- Simple command-line interface (CLI) powered by [typer](https://github.com/tiangolo/typer).
 - Utilizes [googletrans](https://github.com/ssut/py-googletrans) for translation.
 
 ## Installation
