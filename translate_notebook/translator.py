@@ -2,19 +2,21 @@ from googletrans import Translator
 import nbformat
 
 
-def translate_text(text):
+def translate_text(text, source_language, output_language):
     translator = Translator()
-    return translator.translate(text, dest="es").text
+    return translator.translate(text, src=source_language, dest=output_language).text
 
 
-def translate_code_only_comments_in_list(codes):
+def translate_code_only_comments_in_list(codes, source_language, output_language):
     translated_codes = []
     for code in codes:
         lines = code.splitlines()
         translated_code = []
         for line in lines:
             if line.startswith("#"):
-                translated_comment = translate_text(line[1:].strip())
+                translated_comment = translate_text(
+                    line[1:].strip(), source_language, output_language
+                )
                 translated_code.append("# " + translated_comment)
             else:
                 translated_code.append(line)
@@ -22,7 +24,7 @@ def translate_code_only_comments_in_list(codes):
     return translated_codes
 
 
-def translate_notebook(input_path, output_path):
+def translate_notebook(input_path, output_path, source_language, output_language):
     # Read the original notebook
     with open(input_path, "r", encoding="utf-8") as notebook_file:
         notebook_content = notebook_file.read()
@@ -32,11 +34,15 @@ def translate_notebook(input_path, output_path):
     text_content = [
         cell.source for cell in notebook.cells if cell.cell_type == "markdown"
     ]
-    translated_text = [translate_text(text) for text in text_content]
+    translated_text = [
+        translate_text(text, source_language, output_language) for text in text_content
+    ]
 
     # Translate the code content
     code_content = [cell.source for cell in notebook.cells if cell.cell_type == "code"]
-    translated_code = translate_code_only_comments_in_list(code_content)
+    translated_code = translate_code_only_comments_in_list(
+        code_content, source_language, output_language
+    )
 
     # Create a new notebook
     new_notebook = nbformat.v4.new_notebook()
@@ -57,3 +63,5 @@ def translate_notebook(input_path, output_path):
         output_path = input_path.replace(".ipynb", "_translated.ipynb")
     with open(output_path, "w", encoding="utf-8") as f:
         nbformat.write(new_notebook, f)
+
+    print(f"Translated notebook saved to: {output_path}")

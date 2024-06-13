@@ -2,7 +2,9 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/fernandocarazomelo/jupyter-notebook-translator.svg?style=social&label=Star)](https://github.com/fernandocarazomelo/jupyter-notebook-translator)
 
-Easily translate your Jupyter Notebooks from English to Spanish with this powerful tool. Designed for data scientists, researchers, and educators who want to make their work accessible to a Spanish-speaking audience.
+Easily translate your Jupyter Notebooks from English or any other language to any language with this powerful tool. Designed for data scientists, researchers, and educators who want to make their work accessible to a native-speaking audience.
+
+For details refer to the [py-googletrans API Documentation](https://py-googletrans.readthedocs.io/en/latest/). See available languages at the end of this README.
 
 ## Features
 
@@ -21,20 +23,35 @@ Easily translate your Jupyter Notebooks from English to Spanish with this powerf
     cd jupyter-notebook-translator
     ```
 
-2. Install the required packages:
+2. Create a virtual environment:
 
     ```sh
-    pip install -r requirements.txt
+    python -m venv venv_notebook_translator
+    source venv_notebook_translator/bin/activate
+    ```
+
+3. Install the required dependencies:
+
+    ```sh
+    pip install .
     ```
 
 ## Usage
+
+### Help
+
+To see the available commands and options, run:
+
+```sh
+python translate_notebook --help
+```
 
 ### Translate a Single Notebook
 
 To translate a single Jupyter Notebook:
 
 ```sh
-python translate_notebook --input-path "./notebooks_english/nb_en.ipynb" --output-path "./notebooks_spanish/nb_es.ipynb"
+python translate_notebook --input-path "./example/nb_en.ipynb" --output-path "./example/nb_es.ipynb" --output-language "es"
 ```
 
 ### Translate All Notebooks in a Directory
@@ -84,16 +101,117 @@ If you find this project useful, please consider giving it a ⭐ on GitHub and s
 
 ```
 
-### Additional Files
 
-#### `requirements.txt`
-Ensure you have a `requirements.txt` for the required dependencies.
+## Languages
 
-```plaintext
-typer[all]
-googletrans==4.0.0-rc1
-nbformat
-```
-
+| Language Code | Language Name          |
+|---------------|------------------------|
+| af            | afrikaans              |
+| sq            | albanian               |
+| am            | amharic                |
+| ar            | arabic                 |
+| hy            | armenian               |
+| az            | azerbaijani            |
+| eu            | basque                 |
+| be            | belarusian             |
+| bn            | bengali                |
+| bs            | bosnian                |
+| bg            | bulgarian              |
+| ca            | catalan                |
+| ceb           | cebuano                |
+| ny            | chichewa               |
+| zh-cn         | chinese (simplified)   |
+| zh-tw         | chinese (traditional)  |
+| co            | corsican               |
+| hr            | croatian               |
+| cs            | czech                  |
+| da            | danish                 |
+| nl            | dutch                  |
+| en            | english                |
+| eo            | esperanto              |
+| et            | estonian               |
+| tl            | filipino               |
+| fi            | finnish                |
+| fr            | french                 |
+| fy            | frisian                |
+| gl            | galician               |
+| ka            | georgian               |
+| de            | german                 |
+| el            | greek                  |
+| gu            | gujarati               |
+| ht            | haitian creole         |
+| ha            | hausa                  |
+| haw           | hawaiian               |
+| iw            | hebrew                 |
+| he            | hebrew                 |
+| hi            | hindi                  |
+| hmn           | hmong                  |
+| hu            | hungarian              |
+| is            | icelandic              |
+| ig            | igbo                   |
+| id            | indonesian             |
+| ga            | irish                  |
+| it            | italian                |
+| ja            | japanese               |
+| jw            | javanese               |
+| kn            | kannada                |
+| kk            | kazakh                 |
+| km            | khmer                  |
+| ko            | korean                 |
+| ku            | kurdish (kurmanji)     |
+| ky            | kyrgyz                 |
+| lo            | lao                    |
+| la            | latin                  |
+| lv            | latvian                |
+| lt            | lithuanian             |
+| lb            | luxembourgish          |
+| mk            | macedonian             |
+| mg            | malagasy               |
+| ms            | malay                  |
+| ml            | malayalam              |
+| mt            | maltese                |
+| mi            | maori                  |
+| mr            | marathi                |
+| mn            | mongolian              |
+| my            | myanmar (burmese)      |
+| ne            | nepali                 |
+| no            | norwegian              |
+| or            | odia                   |
+| ps            | pashto                 |
+| fa            | persian                |
+| pl            | polish                 |
+| pt            | portuguese             |
+| pa            | punjabi                |
+| ro            | romanian               |
+| ru            | russian                |
+| sm            | samoan                 |
+| gd            | scots gaelic           |
+| sr            | serbian                |
+| st            | sesotho                |
+| sn            | shona                  |
+| sd            | sindhi                 |
+| si            | sinhala                |
+| sk            | slovak                 |
+| sl            | slovenian              |
+| so            | somali                 |
+| es            | spanish                |
+| su            | sundanese              |
+| sw            | swahili                |
+| sv            | swedish                |
+| tg            | tajik                  |
+| ta            | tamil                  |
+| te            | telugu                 |
+| th            | thai                   |
+| tr            | turkish                |
+| uk            | ukrainian              |
+| ur            | urdu                   |
+| ug            | uyghur                 |
+| uz            | uzbek                  |
+| vi            | vietnamese             |
+| cy            | welsh                  |
+| xh            | xhosa                  |
+| yi            | yiddish                |
+| yo            | yoruba                 |
+| zu            | zulu                   |
 
 
