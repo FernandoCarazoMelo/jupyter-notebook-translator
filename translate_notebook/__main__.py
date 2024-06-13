@@ -25,7 +25,7 @@ def translate_notebooks_in_directory(
 
 @app.command()
 def main(
-    input_path: str = "./notebooks_english",
+    input_path: str,
     output_path: str = "",
     source_language: str = "en",
     output_language: str = "es",
